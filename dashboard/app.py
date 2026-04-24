@@ -92,7 +92,7 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
     </style>
-    """, unsafe_allow_value=True)
+    """, unsafe_allow_html=True)
 
 # --- State Management ---
 if 'history' not in st.session_state:
@@ -133,7 +133,7 @@ with col1:
     st.markdown("# 🛡️ Real-Time Intelligence")
     st.markdown("Monitoring global transactions and detecting anomalies at millisecond latency.")
 with col2:
-    st.markdown("<br>", unsafe_allow_value=True)
+    st.markdown("<br>", unsafe_allow_html=True)
     status_color = "🟢" if not demo_mode else "🟡"
     st.info(f"**SYSTEM: {status_color} {'LIVE' if not demo_mode else 'SIMULATED'}**")
 
