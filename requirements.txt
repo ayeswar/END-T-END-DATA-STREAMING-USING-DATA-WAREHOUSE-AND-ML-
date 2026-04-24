@@ -1,0 +1,26 @@
+# Ingestion
+kafka-python
+
+# Processing
+pyspark
+
+# ML Training
+xgboost
+mlflow
+scikit-learn
+sqlalchemy
+psycopg2-binary
+
+# Serving
+fastapi
+uvicorn
+pydantic
+redis
+
+# Monitoring
+evidently
+
+# Dashboard
+streamlit
+plotly
+requests

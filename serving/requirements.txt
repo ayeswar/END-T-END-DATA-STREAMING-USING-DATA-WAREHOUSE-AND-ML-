@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+mlflow
+redis
+xgboost
+pandas
+sqlalchemy
+psycopg2-binary
