@@ -116,6 +116,16 @@ services:
       - DB_HOST=postgres
       - API_HOST=serving
 
+  frontend:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    depends_on:
+      - serving
+    ports:
+      - "3000:80"
+
+
 
   # --- Data Flow (Automation) ---
   producer:
@@ -124,6 +134,9 @@ services:
       dockerfile: ./ingestion/Dockerfile
     depends_on:
       - kafka
+    environment:
+      - KAFKA_HOST=kafka:9092
+
 
   streamer:
     build:
@@ -133,6 +146,10 @@ services:
       - kafka
       - postgres
       - redis
+    environment:
+      - KAFKA_HOST=kafka:9092
+      - POSTGRES_HOST=postgres
+
 
 volumes:
   postgres_data:

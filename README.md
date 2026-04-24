@@ -47,8 +47,9 @@ graph TD
 *   **Real-Time Feature Engineering**: Spark calculates 10-minute sliding window aggregates with sub-second latency.
 *   **Low-Latency Inference**: FastAPI + Redis integration ensures <50ms prediction response times.
 *   **Automated MLOps**: Airflow triggers weekly retraining cycles and logs models to MLflow.
-*   **Drift Detection**: Integrated Evidently AI for monitoring data and model performance decay.
-*   **Premium Dashboard**: Glassmorphic Streamlit UI for real-time monitoring and interactive testing.
+*   **Futuristic UI**: High-performance React + Vite "Command Center" for real-time monitoring.
+*   **Operational Dashboard**: Glassmorphic Streamlit UI for deep analytical insights and manual inference testing.
+
 
 ---
 
@@ -80,10 +81,12 @@ docker-compose up -d --build
 This command builds the custom images and starts the entire 8-service cluster.
 
 ### 3. Access Points
-- **Dashboard**: `http://localhost:8501`
+- **Primary UI (React)**: `http://localhost:3000`
+- **Internal Monitoring (Streamlit)**: `http://localhost:8501`
 - **Inference API**: `http://localhost:8000/docs`
 - **MLflow Tracking**: `http://localhost:5000`
 - **Airflow UI**: `http://localhost:8082`
+
 
 ---
 

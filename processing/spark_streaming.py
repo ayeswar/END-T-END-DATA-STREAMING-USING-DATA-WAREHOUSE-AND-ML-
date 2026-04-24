@@ -58,8 +58,10 @@ def process_stream():
  \
             .option("user", "admin") \
             .option("password", "password") \
+            .option("driver", "org.postgresql.Driver") \
             .mode("append") \
             .save()
+
         
         # Write to Redis (Feature Store) - Pseudo-code for Redis Sink
         # batch_df.foreach(lambda row: redis_client.set(f"user:{row.user_id}:avg", row.avg_amount_10m))
@@ -67,7 +69,9 @@ def process_stream():
 
     query = parsed_df.writeStream \
         .foreachBatch(write_to_sinks) \
+        .option("checkpointLocation", "/tmp/checkpoint") \
         .start()
+
 
     query.awaitTermination()
 
